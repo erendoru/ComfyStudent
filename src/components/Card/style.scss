@@ -1,0 +1,41 @@
+@import "./../../variables.scss";
+
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,600&display=swap");
+
+.card {
+  height: 400px;
+  width: 350px;
+  border-radius: 10px;
+  padding: 10px;
+  word-wrap: break-word;
+  cursor: pointer;
+
+  .image {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .description {
+    height: 40%;
+    width: 100%;
+    padding: 30px 0px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 17px;
+    font-weight: 500;
+    font-family: "Open Sans", sans-serif;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    margin-top: 50px;
+  }
+}

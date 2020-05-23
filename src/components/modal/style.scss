@@ -1,0 +1,127 @@
+@import "./../../variables.scss";
+
+.modal-wrapper {
+  background: $backgroundColor;
+  border: 1px solid #d0cccc;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  margin: 100px auto 0;
+  transition: all 0.8s;
+  width: 40%;
+  height: 30%;
+}
+.modal-header {
+  //   background: #263238;
+  //   height: 40px;
+  //   line-height: 40px;
+  //   padding: 5px 20px;
+  //   text-align: right;
+  //   h3 {
+  //     color: white;
+  //     float: left;
+  //     margin: 0;
+  //     padding: 0;
+  //   }
+  height: 100px;
+
+  display: flex;
+  justify-content: space-between;
+
+  h3 {
+    margin-top: 20px;
+    margin-left: 50px;
+    font-size: 40px;
+    text-align: left;
+    font-family: sans-serif;
+    color: white;
+  }
+
+  .close-modal-btn {
+    color: white;
+    cursor: pointer;
+    font-size: 30px;
+    margin-right: 10px;
+    &:hover {
+      color: black;
+    }
+  }
+}
+.modal-body {
+  margin-top: 10px;
+  margin-left: 50px;
+  height: 220px;
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    input {
+      margin-top: 25px;
+      border: none;
+      height: 30px;
+      width: 70%;
+      border-radius: 5px;
+      outline: none;
+      padding-left: 5px;
+    }
+  }
+  p {
+    margin-top: 15px;
+    text-align: start;
+    color: $primaryColor;
+    font-size: 12px;
+    a {
+      text-decoration: none;
+      color: rgb(187, 179, 179);
+    }
+  }
+}
+.modal-footer {
+  background: #263238;
+  height: 35px;
+  padding: 15px;
+  .btn-cancel,
+  .btn-continue {
+    background: coral;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    outline: none;
+    padding: 10px;
+  }
+
+  .btn-cancel {
+    background-color: #972323;
+    float: left;
+  }
+  .btn-continue {
+    background-color: $buttonColor;
+    float: right;
+  }
+}
+
+@media (max-width: 600px) {
+  .modal-wrapper {
+    width: 60%;
+  }
+  .modal-body {
+    .form input {
+      width: 80%;
+    }
+    p {
+      width: 80%;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .modal-wrapper {
+    width: 20%;
+  }
+  .modal-body {
+    .form {
+      input {
+        width: 80%;
+      }
+    }
+  }
+}
