@@ -1,127 +1,95 @@
 @import "./../../variables.scss";
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap");
 
-.modal-wrapper {
-  background: $backgroundColor;
-  border: 1px solid #d0cccc;
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
-  margin: 100px auto 0;
-  transition: all 0.8s;
-  width: 40%;
-  height: 30%;
-}
-.modal-header {
-  //   background: #263238;
-  //   height: 40px;
-  //   line-height: 40px;
-  //   padding: 5px 20px;
-  //   text-align: right;
-  //   h3 {
-  //     color: white;
-  //     float: left;
-  //     margin: 0;
-  //     padding: 0;
-  //   }
-  height: 100px;
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  font-family: "Roboto Mono", monospace;
+  .modal-main {
+    position: fixed;
+    background: #e3e5e7;
+    width: 40%;
+    height: auto;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
 
-  display: flex;
-  justify-content: space-between;
-
-  h3 {
-    margin-top: 20px;
-    margin-left: 50px;
-    font-size: 40px;
-    text-align: left;
-    font-family: sans-serif;
-    color: white;
-  }
-
-  .close-modal-btn {
-    color: white;
-    cursor: pointer;
-    font-size: 30px;
-    margin-right: 10px;
-    &:hover {
-      color: black;
-    }
-  }
-}
-.modal-body {
-  margin-top: 10px;
-  margin-left: 50px;
-  height: 220px;
-
-  .form {
-    display: flex;
-    flex-direction: column;
-    input {
-      margin-top: 25px;
+    button {
+      position: absolute;
+      right: 0;
+      margin: 15px;
+      padding: 10px 15px;
       border: none;
-      height: 30px;
-      width: 70%;
-      border-radius: 5px;
-      outline: none;
-      padding-left: 5px;
+      background-color: #e3e5e7;
+      font-size: 25px;
+      font-weight: 500;
+      cursor: pointer;
+      &:hover {
+        background-color: #c2c5c7;
+        border-radius: 5px;
+      }
     }
-  }
-  p {
-    margin-top: 15px;
-    text-align: start;
-    color: $primaryColor;
-    font-size: 12px;
-    a {
-      text-decoration: none;
-      color: rgb(187, 179, 179);
+    .text {
+      height: 150px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      p {
+        width: 65%;
+        text-align: center;
+        margin-top: 20px;
+        color: rgb(95, 93, 93);
+        font-size: 14px;
+      }
     }
-  }
-}
-.modal-footer {
-  background: #263238;
-  height: 35px;
-  padding: 15px;
-  .btn-cancel,
-  .btn-continue {
-    background: coral;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
-    outline: none;
-    padding: 10px;
-  }
-
-  .btn-cancel {
-    background-color: #972323;
-    float: left;
-  }
-  .btn-continue {
-    background-color: $buttonColor;
-    float: right;
-  }
-}
-
-@media (max-width: 600px) {
-  .modal-wrapper {
-    width: 60%;
-  }
-  .modal-body {
-    .form input {
-      width: 80%;
-    }
-    p {
-      width: 80%;
-    }
-  }
-}
-
-@media (min-width: 1200px) {
-  .modal-wrapper {
-    width: 20%;
-  }
-  .modal-body {
-    .form {
-      input {
-        width: 80%;
+    .cards {
+      width: 100%;
+      height: 350px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        height: 260px;
+        width: 260px;
+        color: rgb(95, 93, 93);
+        border: 1px solid rgb(221, 216, 216);
+        border-radius: 20px;
+        box-shadow: 0 20px 20px 0 #e9ebf0;
+        margin-bottom: 40px;
+        h4 {
+          margin-top: 15px;
+        }
+        &:hover {
+          height: 270px;
+          width: 270px;
+          background-color: #e7e9eb;
+          border-radius: 20px;
+          border: 1px solid rgb(168, 230, 168);
+          box-shadow: 0px 5px 15px 0px rgba(180, 180, 180, 0.75);
+          transition: all 0.2s ease;
+          // transform: scale(1.1, 1.1);
+        }
       }
     }
   }
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
 }

@@ -1,18 +1,19 @@
 import React, { useState } from "react";
+import Modal from "./../modal/index";
+
 import "./style.scss";
 
-import Modal from "./../modal";
-
 export default function Index() {
-  var [isShowing, setIsShowing] = useState(false);
   var [menu, setmenu] = useState(true);
+  var [show, setShow] = useState(true);
 
-  function openModalHandler() {
-    setIsShowing(true);
-  }
-  function closeModalHandler() {
-    setIsShowing(false);
-  }
+  var showModal = () => {
+    setShow(true);
+  };
+
+  var hideModal = () => {
+    setShow(false);
+  };
 
   return (
     <div className="Navbar-Component">
@@ -41,18 +42,14 @@ export default function Index() {
               <a href="# ">Giriş</a>
             </li>
             <li>
-              <a href="# " className="button" onClick={openModalHandler}>
+              <a href="# " className="button" onClick={showModal}>
                 Kaydol
               </a>
             </li>
           </ul>
         </div>
       </nav>
-      {/* <Modal
-        className="modal"
-        show={isShowing}
-        close={closeModalHandler}
-      ></Modal> */}
+      <Modal show={show} handleClose={hideModal}></Modal>
     </div>
   );
 }

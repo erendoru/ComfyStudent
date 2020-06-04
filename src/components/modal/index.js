@@ -2,42 +2,32 @@ import React from "react";
 
 import "./style.scss";
 
-const modal = (props) => {
+const modal = ({ show, handleClose, children }) => {
+  const showHideClassName = show ? "modal display-block" : "modal display-none";
   return (
-    <div>
-      <div
-        className="modal-wrapper"
-        style={{
-          transform: props.show ? "translateY(0vh)" : "translateY(-100vh)",
-          opacity: props.show ? "1" : "0",
-        }}
-      >
-        <div className="modal-header">
-          <div className="kayıtol-logo">
-            <h3>
-              Yeni <br /> Hesap
-            </h3>
-          </div>
-          <span className="close-modal-btn" onClick={props.close}>
-            ×
-          </span>
-        </div>
-        <div className="modal-body">
-          <div className="form">
-            <input type="text" name="name" placeholder="Kullanıcı Adı" />
-            <input type="mail" name="name" placeholder="Email" />
-            <input type="mail" name="name" placeholder="Şifre" />
-          </div>
-          <p className="contrat">
-            Kaydolarak <a href="# ">kullanıcı & gizlilik</a> sözleşmesi'ni kabul
-            etmiş sayılırsınız.{" "}
+    <div className={showHideClassName}>
+      <section className="modal-main">
+        <button onClick={handleClose}>X</button>
+        <div className="text">
+          <h2>
+            Neye <bold>İhtiyacın var?</bold>
+          </h2>
+          <p>
+            Danışman olarak insanlara yardımcı mı olmak istiyorsun yoksa
+            yurtdışında eğitim mi görmek istiyorsun?
           </p>
         </div>
-        <div className="modal-footer">
-          <button className="btn-cancel">Giriş Yap</button>
-          <button className="btn-continue">Kayıt Ol</button>
+        <div className="cards">
+          <div className="card">
+            <img src="https://picsum.photos/140/140" alt="" />
+            <h4>Danışman olarak hizmet vermek istiyorum</h4>
+          </div>
+          <div className="card">
+            <img src="https://picsum.photos/140/140" alt="" />
+            <h4>Yurtdışında okumak istiyorum</h4>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

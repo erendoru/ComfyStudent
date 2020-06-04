@@ -5,14 +5,12 @@ import Card from "./../Card/index";
 import Typical from "react-typical";
 import Faq from "./../faq/index";
 
-import Student1 from "./../../graphics/collagestudent.png";
 import Student2 from "./../../graphics/studentandteacher.png";
-import Student3 from "./../../graphics/stundet.png";
 import Students4 from "./../../graphics/students-chillin.png";
 
 const cards = [
   {
-    photo: Student1,
+    photo: Student2,
     text:
       "ComfyStudent, yetenekli danışmanların yurtdışında okumak isteyenlerle buluştuğu. Bir danışmanlık platformudur.",
   },
@@ -22,7 +20,7 @@ const cards = [
       "Rekabetçi pazar anlayışı ile öğrencilerin başarılı danışmanlardan uygun fiyata hizmet almasını sağlar.",
   },
   {
-    photo: Student3,
+    photo: Student2,
     text:
       "Hizmet değerlendirilmesi sayesinde öğrencilerin her zaman en kaliteli hizmete ulaşmasını sağlar.",
   },
